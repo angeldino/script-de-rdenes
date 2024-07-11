@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estatus ZF</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div id="menu">
+            <ul>
+                <li id="nombre">Clientes</li>
+                <a href="{% url 'zfestatus' %}"><li>TRW ZF</li></a>
+                <a href="{% url 'daimlerestatus' %}"><li>Daimler</li></a>
+            </ul>
+        </div>
+        
+    </body>
+</html>
