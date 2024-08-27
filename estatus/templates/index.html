@@ -4,15 +4,73 @@
     <head>
         <title>Estatus ZF</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU26viv57nX1nX7D6LKCkTRTUdN3aO0fc"></script>
+        <script src="{% static 'scripts/scripts.js' %}"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
     </head>
     <body>
-        <div id="menu">
-            <ul>
-                <li id="nombre">Clientes</li>
-                <form>
-                    
-                </form>
-            </ul>
+        <div id="output"></div>
+        
+        <div id="top">
+            REPORTE DE ESTATUS TRW
         </div>
+
+        <div id="wrapper">
+            <div id="menu">
+                <ul>
+                    <li>SANTA ROSA</li>
+                    <li>SIDISA</li>
+                    <li>EL MARQUEZ</li>
+                    <li>ROTORES</li>
+                </ul>
+            </div>
+            
+            <div id="contenedor-principal">
+                <div id="contenedor2">
+                    <table id="captureTable">
+                        <thead>
+                            <tr>
+                                <th>Orden</th>
+                                <th>Trailer</th>
+                                <th>Remolque</th>
+                                <th>Coordenadas</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="orden" maxlength="7" placeholder="Orden"></td>
+                                <td><input type="text" name="trailer" placeholder="Trailer"></td>
+                                <td><input type="text" name="remolque" maxlength="7" placeholder="Remolque"></td>
+                                <td><input type="text" name="coordenadas" placeholder="Coordenadas"></td>
+                                <td><button type="button">Guardar Info</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="contenedor">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Orden de Venta</th>
+                                <th>Trailer</th>
+                                <th>Remolque</th>
+                                <th>Ubicación Actual</th>
+                                <th>Destino</th>
+                                <th>Distancia</th>
+                                <th>Tiempo Estimado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las filas con los resultados se insertarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
     </body>
 </html>
