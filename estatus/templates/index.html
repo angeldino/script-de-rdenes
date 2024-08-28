@@ -5,7 +5,6 @@
         <title>Estatus ZF</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU26viv57nX1nX7D6LKCkTRTUdN3aO0fc"></script>
-        <script src="{% static 'scripts/scripts.js' %}"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
@@ -29,26 +28,23 @@
             
             <div id="contenedor-principal">
                 <div id="contenedor2">
-                    <table id="captureTable">
-                        <thead>
-                            <tr>
-                                <th>Orden</th>
-                                <th>Trailer</th>
-                                <th>Remolque</th>
-                                <th>Coordenadas</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" name="orden" maxlength="7" placeholder="Orden"></td>
-                                <td><input type="text" name="trailer" placeholder="Trailer"></td>
-                                <td><input type="text" name="remolque" maxlength="7" placeholder="Remolque"></td>
-                                <td><input type="text" name="coordenadas" placeholder="Coordenadas"></td>
-                                <td><button type="button">Guardar Info</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form id="distanceForm">
+                        <label for="origin">Origin:</label>
+                        <input type="text" id="origin" name="origin" required>
+
+                        <label for="destination">Destination:</label>
+                        <input type="text" id="destination" name="destination" required>
+
+                        <label for="orden">Orden:</label>
+                        <input type="text" id="orden" name="orden" required>
+
+                        <label for="carro">Carro:</label>
+                        <input type="text" id="carro" name="carro" required>
+                        
+                        <label for="remolque">Remolque:</label>
+                        <input type="text" id="remolque" name="remolque" required>
+                        <button type="submit">Calculate Distance</button>
+                    </form>
                 </div>
 
                 <div id="contenedor">
@@ -71,6 +67,6 @@
                 </div>
             </div>
         </div>
-    </body>
+        <script src="{% static 'scripts/scripts.js' %}"></script>
     </body>
 </html>
